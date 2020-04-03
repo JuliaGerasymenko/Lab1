@@ -67,6 +67,15 @@ public class LogInFragment extends Fragment {
                         .commit();
             }
         });
+        logInButton = view.findViewById(R.id.login_button);
+        logInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                if (validateFields()) {
+                    logIn();
+                }
+            }
+        });
     }
 
     private void logIn() {

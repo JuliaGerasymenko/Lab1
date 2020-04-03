@@ -55,6 +55,19 @@ public class SignUpFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
 
+        emailEditText = view.findViewById(R.id.signup_email_edit_text);
+        passwordEditText = view.findViewById(R.id.signup_password_edit_text);
+        confirmPasswordEditText=  view.findViewById(R.id.signup_confirm_password_edit_text);
+        signUpButton = view.findViewById(R.id.signup_done_button);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (validateFields()) {
+                    createUser();
+                }
+            }
+        });
+
     }
 
     private void createUser() {
